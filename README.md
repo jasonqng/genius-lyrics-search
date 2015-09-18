@@ -20,7 +20,7 @@ search(search_term,outputfilename,client_access_token)
 ```
 
 ##Limitations/to-do
-*Only gets 50 pages worth of results (approximately 1000 results). Appears to be a restriction on Genius' end.
-*Currently searches not just lyrics for search term, but also song titles and artist names.
-*No way to differentiate between genres or between lyrics vs. text content (e.g. speeches, interviews, magazine articles, books)?
-*This was just for fun!
+* Only gets 50 pages worth of results (approximately 1000 results). Appears to be a restriction on Genius' end.
+* Currently searches not just lyrics for search term, but also song titles and artist names.
+* No way to differentiate between genres or between lyrics vs. text content (e.g. speeches, interviews, magazine articles, books)?
+* This was just for fun!
