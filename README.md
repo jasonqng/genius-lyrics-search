@@ -1,7 +1,5 @@
 # genius-lyrics-search
-
-## What
-A quick and dirty Python script for searching for lyrics/artists/songs from [https://api.genius.com](https://api.genius.com), parsing the returned JSON, and outputting it in a CSV file.
+A quick and dirty Python script for searching lyrics/artists/songs on [https://api.genius.com](https://api.genius.com), parsing the returned JSON, and outputting it in a CSV file.
 
 ## Setup
 Requires a client access token from Genius.com: [https://genius.com/api-clients](https://genius.com/api-clients). (Maybe in future will generate authentication from client_id and client_secret.) Add access token credential to "credentials.ini" in project root folder
@@ -26,7 +24,7 @@ search(search_term,outputfilename,client_access_token)
 * This was just for fun!
 
 ##Sample output
-First ten results for search for `albee square`
+First ten results for search for `albee square` [(web search)](http://genius.com/search?q=albee+square)
 
  page | id | title | url | path | header_image_url | annotation_count | pyongs_count | primaryartist_id | primaryartist_name | primaryartist_url | primaryartist_imageurl 
 ------|--------|--------------------------------|------------------------------------------------------------------------------|-------------------------------------------------------------|-------------------------------------------------------------------------------------|------------------|--------------|------------------|----------------------|------------------------------------------------|------------------------------------------------------------------------------
