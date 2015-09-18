@@ -24,7 +24,7 @@ search(search_term,outputfilename,client_access_token)
 * This was just for fun!
 
 ##Sample output
-First ten results for search for `albee square` [http://genius.com/search?q=albee+square](web search)
+First ten results for search for `albee square` [(web search)](http://genius.com/search?q=albee+square)
 
  page | id | title | url | path | header_image_url | annotation_count | pyongs_count | primaryartist_id | primaryartist_name | primaryartist_url | primaryartist_imageurl 
 ------|--------|--------------------------------|------------------------------------------------------------------------------|-------------------------------------------------------------|-------------------------------------------------------------------------------------|------------------|--------------|------------------|----------------------|------------------------------------------------|------------------------------------------------------------------------------
