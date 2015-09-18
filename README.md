@@ -14,7 +14,7 @@ Script passes the access token in a request header as specified in [Genius docum
 ```python
 python search.py 'search terms here'
 ```
-or if using as module
+or if using as imported function
 ```python
 search(search_term,outputfilename,client_access_token)
 ```
