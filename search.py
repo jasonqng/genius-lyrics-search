@@ -3,6 +3,7 @@
 
 import sys  
 import re
+import urllib
 import urllib2
 import json
 import csv
@@ -45,7 +46,7 @@ def search(search_term,outputfilename,client_access_token):
         #Unfortunately, looks like it maxes out at 50 pages (approximately 1,000 results), roughly the same number of results as displayed on web front end
         n=1
         while True:
-            querystring = "http://api.genius.com/search?q=" + search_term + "&page=" + str(n)
+            querystring = "http://api.genius.com/search?q=" + urllib.quote(search_term) + "&page=" + str(n)
             request = urllib2.Request(querystring)
             request.add_header("Authorization", "Bearer " + client_access_token)   
             request.add_header("User-Agent", "curl/7.9.8 (i686-pc-linux-gnu) libcurl 7.9.8 (OpenSSL 0.9.6b) (ipv6 enabled)") #Must include user agent of some sort, otherwise 403 returned
