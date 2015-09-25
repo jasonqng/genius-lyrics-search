@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python2.7
 # -*- coding: utf-8 -*-
 
 import sys  
@@ -54,7 +54,7 @@ def search(search_term,outputfilename,client_access_token):
                     response = urllib2.urlopen(request, timeout=4) #timeout set to 4 seconds; automatically retries if times out
                     raw = response.read()
                 except socket.timeout:
-                    print "Timeout raised and caught"
+                    print("Timeout raised and caught")
                     continue
                 break
             json_obj = json.loads(raw)
@@ -63,9 +63,9 @@ def search(search_term,outputfilename,client_access_token):
             num_hits = len(body)
             if num_hits==0:
                 if page==1:
-                    print "No results for: " + search_term
+                    print("No results for: " + search_term)
                 break      
-            print "page {0}; num hits {1}".format(page, num_hits) 
+            print("page {0}; num hits {1}".format(page, num_hits))
             
             for result in body:
                 id = result["result"]["id"]
@@ -81,7 +81,7 @@ def search(search_term,outputfilename,client_access_token):
                 primaryartist_imageurl = result["result"]["primary_artist"]["image_url"]
                 row=[page,id,title,url,path,header_image_url,annotation_count,pyongs_count,primaryartist_id,primaryartist_name,primaryartist_url,primaryartist_imageurl]
                 outwriter.writerow(row) #write as CSV
-            n+=1
+            page+=1
 
 arguments = sys.argv[1:] #so you can input searches from command line if you want
 search_term = arguments[0].translate(None, "\'\"")
