@@ -1,8 +1,8 @@
 # genius-lyrics-search
 A quick and dirty Python script for searching lyrics/artists/songs on [https://api.genius.com](https://api.genius.com), parsing the returned JSON, and outputting it in a CSV file.
 
-## Setup
-Requires a client access token from Genius.com: [https://genius.com/api-clients](https://genius.com/api-clients). (Maybe in future will generate authentication from client_id and client_secret.) Add access token credential to "credentials.ini" in project root folder
+## Requirements and Setup
+Written for Python 2.7 (but could be tweaked for Python 3 pretty easily). Requires a client access token from Genius.com: [https://genius.com/api-clients](https://genius.com/api-clients). (Maybe in future will generate authentication from client_id and client_secret.) Add access token credential to "credentials.ini" in project root folder
 ```python
 client_access_token = 'fillinyourtokenhere'
 ```
