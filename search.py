@@ -25,7 +25,7 @@ def load_credentials():
     return client_id, client_secret, client_access_token
 
 def setup(search_term):
-    reload(sys)  
+    reload(sys) #dirty (but quick) way to deal with character encoding issues in Python2; if writing for Python3, should remove
     sys.setdefaultencoding('utf8')
     if not os.path.exists("output/"):
         os.makedirs("output/")    
@@ -68,7 +68,7 @@ def search(search_term,outputfilename,client_access_token):
             print("page {0}; num hits {1}".format(page, num_hits))
             
             for result in body:
-                id = result["result"]["id"]
+                result_id = result["result"]["id"]
                 title = result["result"]["title"]
                 url = result["result"]["url"]
                 path = result["result"]["path"]
@@ -79,7 +79,7 @@ def search(search_term,outputfilename,client_access_token):
                 primaryartist_name = result["result"]["primary_artist"]["name"]
                 primaryartist_url = result["result"]["primary_artist"]["url"]
                 primaryartist_imageurl = result["result"]["primary_artist"]["image_url"]
-                row=[page,id,title,url,path,header_image_url,annotation_count,pyongs_count,primaryartist_id,primaryartist_name,primaryartist_url,primaryartist_imageurl]
+                row=[page,result_id,title,url,path,header_image_url,annotation_count,pyongs_count,primaryartist_id,primaryartist_name,primaryartist_url,primaryartist_imageurl]
                 outwriter.writerow(row) #write as CSV
             page+=1
 
