@@ -83,8 +83,12 @@ def search(search_term,outputfilename,client_access_token):
                 outwriter.writerow(row) #write as CSV
             page+=1
 
-arguments = sys.argv[1:] #so you can input searches from command line if you want
-search_term = arguments[0].translate(None, "\'\"")
-outputfilename = setup(search_term)
-client_id, client_secret, client_access_token = load_credentials()
-search(search_term,outputfilename,client_access_token)
+def main():
+    arguments = sys.argv[1:] #so you can input searches from command line if you want
+    search_term = arguments[0].translate(None, "\'\"")
+    outputfilename = setup(search_term)
+    client_id, client_secret, client_access_token = load_credentials()
+    search(search_term,outputfilename,client_access_token)
+
+if __name__ == '__main__':
+    main()
